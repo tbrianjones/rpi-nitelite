@@ -46,8 +46,8 @@
 	<ul>
 		<li><a href="?r=500&g=500&b=500&w=500">BRIGHT</a></li>
 		<li><a href="?r=500&g=0&b=0&w=0">RED</a></li>
-		<li><a href="?r=500&g=65&b=0&w=0">ORANGE</a></li>
-		<li><a href="?r=500&g=100&b=0&w=0">YELLOW</a></li>
+		<li><a href="?r=500&g=100&b=0&w=0">ORANGE</a></li>
+		<li><a href="?r=500&g=200&b=0&w=0">YELLOW</a></li>
 		<li><a href="?r=0&g=500&b=0&w=0">GREEN</a></li>
 		<li><a href="?r=0&g=0&b=500&w=0">BLUE</a></li>
 		<li><a href="?r=500&g=0&b=250&w=0">VIOLET</a></li>

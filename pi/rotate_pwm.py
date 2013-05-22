@@ -7,11 +7,9 @@ PWM.init_channel( 0, 10000 )
 PWM.print_channel( 0 )
 
 r = 10
-g = 10
-b = 10
+b = 490
 
 r_sign = 1
-g_sign = 1
 b_sign = 1
 
 while True:
@@ -24,26 +22,14 @@ while True:
 	else:
 		PWM.add_channel_pulse( 0, 23, 0, r )
 		if r_sign:
-			r = r + 10
+			r = r + 5
 		else:
-			r = r - 10
-	
-	# green
-	if g == 10 and not g_sign:
-		g_sign = 1
-	elif g == 180 and g_sign:
-		g_sign = 0
-	else:
-		PWM.add_channel_pulse( 0, 24, 0, g )
-		if g_sign:
-			g = g + 5
-		else:
-			g = g - 5
-	
+			r = r - 5
+
 	# blue
 	if b == 10 and not b_sign:
 		b_sign = 1
-	elif b == 300 and b_sign:
+	elif b == 490 and b_sign:
 		b_sign = 0
 	else:
 		PWM.add_channel_pulse( 0, 25, 0, b )
