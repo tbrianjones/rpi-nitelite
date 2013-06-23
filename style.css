@@ -71,6 +71,7 @@ ul li {
 	border-bottom: 1px solid #ccc;
 }
 ul li a {
-	padding: 15px 20px;
+	font-size: 20px;
+	padding: 20px 20px;
 	display: block;
 }

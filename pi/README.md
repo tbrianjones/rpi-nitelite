@@ -2,16 +2,24 @@ Nite-Lite
 =========
 
 
+setup pi
+--------
+
+### hardware
+- install raspian on memory card
+- install wireless network device
+
+### software
+- install apache
+- install php
+- install python
+	- python utilities
+
+
 utilities
 ---------
 
-### wiringPi
-- download and install: https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/
-- operation
-	- man gpio
-	- couldn't get the software PWM working.  I don't think the GPIO CLI utility has softPWM built in yet.
-
-### RPIO
+### RPIO ( in use by nitelite )
 - useful blog post: http://www.raspberrypi.org/phpBB3/viewtopic.php?f=32&t=36670
 - website: http://pythonhosted.org/RPIO/
 - docs: https://github.com/metachris/RPIO/tree/master/documentation/source
@@ -23,3 +31,9 @@ utilities
 	- $ cd RPIO
 	- $ sudo python setup.py install
 	- verified as working: tbj 10.05.13
+
+### wiringPi ( not uing this )
+- download and install: https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/
+- operation
+	- man gpio
+	- couldn't get the software PWM working.  I don't think the GPIO CLI utility has softPWM built in yet.
