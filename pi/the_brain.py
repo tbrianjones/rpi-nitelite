@@ -133,11 +133,11 @@ while True:
 	#
 	#	- skip if motion is detected
 	#
-	if on == 0 and motion == 0:
-		PWM.add_channel_pulse( 0, red_gpio, 0, 0 )
-		PWM.add_channel_pulse( 0, green_gpio, 0, 100 )
-		PWM.add_channel_pulse( 0, blue_gpio, 0, 0 )
-		PWM.add_channel_pulse( 0, white_gpio, 0, 0 )
+	if on == 0 and motion == False:
+		PWM.clear_channel_gpio( 0, red_gpio )
+		PWM.add_channel_pulse( 0, green_gpio, 0, 10 )
+		PWM.clear_channel_gpio( 0, blue_gpio )
+		PWM.clear_channel_gpio( 0, white_gpio )
 		time.sleep( 0.1 )
 		continue
 	
