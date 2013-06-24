@@ -2,6 +2,13 @@ Raspberry-Pi Nitelite ( codename: Natalia )
 ===========================================
 
 
+build
+-----
+- raspberry pi rev b
+- motion sensor: http://www.parallax.com/Portals/0/Downloads/docs/prod/sens/555-28027-PIRSensor-v2.2.pdf
+- custom built led board
+	
+
 setup pi
 --------
 

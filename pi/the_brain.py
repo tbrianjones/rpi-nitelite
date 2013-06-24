@@ -1,6 +1,7 @@
 # import required python libraries
+import RPIO
 import RPIO.PWM as PWM
-import time as time
+import time
 import random
 
 # gpio pins
@@ -8,6 +9,15 @@ red_gpio	= 23
 green_gpio	= 24
 blue_gpio	= 25
 white_gpio	= 22
+motion_gpio	= 18
+
+# settings
+motion_delay				= 0		# motion delay trigger ( boolean, 0 or 1 )
+motion_delay_cycles			= 60	# cycles, time dependent on sleep functions
+num_motion_delay_cycles 	= 0		# number of cycles since last motion detected
+
+# initiate motion input pin
+RPIO.setup( motion_gpio, RPIO.IN )
 
 # initiate software PWM
 PWM.setup()
@@ -55,18 +65,48 @@ while True:
 		time.sleep( 0.5 )
 		continue
 	
+	# check for motion detection
+	motion = RPIO.input( motion_gpio )
+	
+	print num_motion_delay_cycles
+	
 	# check for motion
 	#
 	#	- read the motion gpio pin and set is_motion variable
 	#
-	motion = 0
-	if motion == 1:
+	if ( motion == 1 or motion_delay == 1 ) and on == 0 and sleep == 0:
+	
+		# delay off after motion is detected
+		if( num_motion_delay_cycles > 0 and num_motion_delay_cycles < motion_delay_cycles ):
+			motion_delay = 1
+			num_motion_delay_cycles += 1;
+		else:
+			motion_delay = 0
+			
+		# reset cycle count if more motion is detected within the delay time
+		if( motion == 1 ):
+			num_motion_delay_cycles = 1
+		
+		# turn motion lights on
 		PWM.add_channel_pulse( 0, red_gpio, 0, 500 )
-		PWM.add_channel_pulse( 0, green_gpio, 0, 250 )
-		PWM.add_channel_pulse( 0, blue_gpio, 0, 250 )
-		PWM.add_channel_pulse( 0, white_gpio, 0, 100 )
+		PWM.add_channel_pulse( 0, green_gpio, 0, 200 )
+		PWM.add_channel_pulse( 0, blue_gpio, 0, 300 )
+		PWM.add_channel_pulse( 0, white_gpio, 0, 100 )		
+		
+		# sleep cycle before continuing
 		time.sleep( 0.5 )
 		continue
+	
+	# stop motion delay if:
+	#
+	#	- no motion is detected and no motion delay has been triggered
+	#	- motion delay cycle count reached without more motion being detected
+	#	- lights were turned on
+	#	- Natalia was put to sleep
+	#
+	else:
+		motion_delay = 0
+		num_motion_delay_cycles = 0
 	
 	# lights are turned off
 	#
