@@ -148,28 +148,30 @@ while True:
 	if fire == 1:
 		
 		# red ( primary fire color )
-		red = 100
-		red = red + random.randint( 0, 400 )
+		red = 400
+		red = red + random.randint( 0, 100 )
 		PWM.add_channel_pulse( 0, red_gpio, 0, red )
 		
 		# green
-		green = 10
-		green = green + random.randint( 0, 20 )
+		green = 50
+		green = green + random.randint( 0, 50 )
 		PWM.add_channel_pulse( 0, green_gpio, 0, green )
 		
 		# blue
-		blue = 5
-		blue = blue + random.randint( 0, 10 )
-		PWM.add_channel_pulse( 0, blue_gpio, 0, blue )
+		blue = 10
+		blue = blue + random.randint( 0, 50 )
+		#PWM.add_channel_pulse( 0, blue_gpio, 0, blue )
+		PWM.clear_channel_gpio( 0, blue_gpio )
 		
 		# white
-		white = 5
-		white = white + random.randint( 0, 10 )
-		PWM.add_channel_pulse( 0, white_gpio, 0, white )
+		white = 20
+		white = white + random.randint( 0, 20 )
+		#PWM.add_channel_pulse( 0, white_gpio, 0, white )
+		PWM.clear_channel_gpio( 0, white_gpio )
 		
 		# sleep between changes
 		seconds = 0.1
-		seconds = seconds + random.randint( 0, 10 ) / 10
+		seconds = seconds + random.randint( 0, 6 ) / 10
 		time.sleep( seconds )
 		continue
 	

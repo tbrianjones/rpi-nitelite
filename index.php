@@ -66,8 +66,8 @@
 			</tr>
 			<tr>
 				<td style="background-color: white;"><a href="update_colors.php?r=0&g=0&b=0&w=500">&nbsp;</a></td>
-				<td style="background-color: #fcfdeb;"><a href="update_colors.php?r=50&g=20&b=0&w=500">&nbsp;</a></td>
-				<td style="background-color: #ebf3fd;"><a href="update_colors.php?r=0&g=0&b=20&w=500">&nbsp;</a></td>
+				<td style="background-color: #fcfdeb;"><a href="update_colors.php?r=500&g=100&b=0&w=500">&nbsp;</a></td>
+				<td style="background-color: #ebf3fd;"><a href="update_colors.php?r=100&g=0&b=100&w=500">&nbsp;</a></td>
 			</tr>
 		</table>
 		
