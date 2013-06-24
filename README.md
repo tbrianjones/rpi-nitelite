@@ -72,3 +72,6 @@ utilities used
 
 ### viewport sensing in the web app
 - https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+
+### potential ios homescreen icon images
+- based on images here: http://caricature-8.blogspot.com/2012/07/natalie-portman-cartoon-pictures.html
