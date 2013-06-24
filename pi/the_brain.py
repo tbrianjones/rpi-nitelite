@@ -70,11 +70,19 @@ while True:
 	
 	# system is off ( do not respond to motion )
 	if sleep == 1:
+	
+		# turn leds off
 		PWM.add_channel_pulse( 0, red_gpio, 0, 0 )
 		PWM.add_channel_pulse( 0, green_gpio, 0, 0 )
 		PWM.add_channel_pulse( 0, blue_gpio, 0, 0 )
 		PWM.add_channel_pulse( 0, white_gpio, 0, 0 )
-		time.sleep( 1 )
+		
+		# reset motion sensor
+		motion_delay = 0
+		num_motion_delay_cycles = 0
+		
+		# sleep cycle
+		time.sleep( 0.1 )
 		continue
 	
 	# check for motion detection
