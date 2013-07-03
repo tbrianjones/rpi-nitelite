@@ -51,7 +51,7 @@ while True:
 		continue
 	
 	# read base config settings
-	f = open( 'config_settings', 'r' )
+	f = open( '/home/pi/www/nitelite/pi/config_settings', 'r' )
 	sleep	= f.readline().rstrip( '\n' )
 	on		= f.readline().rstrip( '\n' )
 	fire	= f.readline().rstrip( '\n' )
@@ -176,7 +176,7 @@ while True:
 		continue
 	
 	# read color settings
-	f = open( 'config_colors', 'r' )
+	f = open( '/home/pi/www/nitelite/pi/config_colors', 'r' )
 	red_pw		= f.readline().rstrip( '\n' )
 	green_pw	= f.readline().rstrip( '\n' )
 	blue_pw		= f.readline().rstrip( '\n' )
